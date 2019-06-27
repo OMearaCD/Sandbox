@@ -7,6 +7,8 @@ logoFadein.html - Features a transparent logo that becomes opaque when the user 
 
 navbar.html - Uses cubic-bezier to make a neat little navbar with items that expand and change color when hovered over. See comeara.com for an example.
 
+demibot.js - Small bot made with Node.js and Discord.js. Uses the Discord API to respond to what users type in Discord chat. Posts memes, funny faces, and responds to certain key phrases. A work in progress.
+
 greeter - Baby's first AJAX call. Greets the user based on what they typed in the box for 'gender.'
 
 session login - Uses PHP Sessions to make a mimic login/logout feature. Enter your First and Last name to save to a session. Select "log out" to destroy the session and start over. Simple thing to build upon.
