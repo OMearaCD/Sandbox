@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Edgy Username Generator</title></head>
+<body>
+    <img src="https://i.gifer.com/YmoL.gif">
+<h3>Flamin' hot username generator</h3>
+
+    <p>Type a boring username:<input id="username"></p>
+        
+
+<button onclick="generate()">Give me a cool username!</button>
+
+<script>
+function generate() {
+    var boring = document.getElementById('username').value;
+    var two = boring.toUpperCase();
+    var awesome = two.replace(/o/gi, "0").replace(/a/gi, "4").replace(/e/gi, "3").replace(/i/gi, "1").replace(/l/gi, "7").replace(/s/gi, "5");
+
+    
+    
+    var result = (awesome + rando);
+    var rando = Math.floor(Math.random() * 3);
+
+     if (rando === 0) {
+        result = awesome + "420";
+    }
+    else if (rando === 1) {
+        result = awesome + "69";
+    }
+    else {
+        result = "xXx" + awesome + "xXx"
+    }
+
+   
+    document.write("Your scorchin' new username is " + result);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AJAX</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="mycss.css">
+</head>
+<body>
+    
+    
+<div id="main_div">
+<input id="fname" placeholder="First name">
+<input id="lname" placeholder="Last Name">
+    <input id="gender" placeholder="gender">
+    <!-- //<input class="gender" type="radio" name="gender" value="male"> Male  //Need to be an ID
+    <input class="gender" type="radio" name="gender" value="female">Female -->
+<button>Send data</button>
+</div>
+
+
+<script>
+$(document).ready(function() {
+  $("button").on("click",function() {  
+  let person = {};
+  person.fname = $("#fname").val();
+  person.lname = $("#lname").val();
+    person.gender = $("#gender").val();
+//person.gender = $(".gender").val(); //This won't work because you need an ID, and you can't have two things with the same ID
+  $("#main_div").load("select.php",person);
+  });
+});
+
+
+</script>
+
+</body>
+</html>
+
+

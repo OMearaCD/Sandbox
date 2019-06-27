@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The user hovers over the container -->
+    <!-- Currently, horse1 is on bottom. Horse2 appears on top when the user hovers over the container. -->
+<style>
+    body {
+        background-color:aqua;
+    }
+.container {
+  position: relative;
+  width: 100px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.container:hover .top {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="images/horse1.png" alt="logo" class="image">
+  <div class="top">
+    <img src="images/horse2.png" alt="logo" style="width:100px;">
+    </div>
+
+</div>
+
+</body>
+</html>

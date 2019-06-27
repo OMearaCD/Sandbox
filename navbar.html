@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style> 
+div {
+    width: 100px;
+    height: 3em;
+    transition: width 0.5s;
+    transition-timing-function: cubic-bezier(0.1);
+    float:left;
+    padding:5px;
+}
+p div {
+text-align:center;
+}
+
+div:hover {
+    width:150px;
+    color:white;
+    /* background-image: linear-gradient(#33cccc, #336699); */
+        transition:0.5s;
+}
+    #gallery {
+        background-color:#00e6e6;   
+    }
+    #store {
+        background-color:#33cccc;
+    }
+    #resources {
+        background-color:#0099cc;
+    }
+    #about {
+        background-color:#336699;
+    }
+    body {
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+<div id="gallery"><p>Galleries</p></div>
+<div id="store"><p>Store</p></div>
+<div id="resources"><p>Resources</p></div>
+    <div id="about"><p>About</p></div>
+
+
+
+</body>
+</html>
