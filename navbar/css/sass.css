@@ -55,8 +55,8 @@ table {
 /* End CSS Reset */
 /* Header Top attributes */
 header {
-  background-color: navy;
-  height: 7em;
+  background-color: #053250;
+  height: 7.5em;
 }
 
 header p {
@@ -64,34 +64,36 @@ header p {
 }
 
 #logo {
-  padding: 10px;
+  padding: 15px;
   float: left;
   height: 5em;
 }
 
 /* Header Bottom attributes */
 .navBit {
-  background-color: skyblue;
-  height: 4em;
-  margin: 30px;
-  text-align: center;
+  width: 20%;
+  height: 4.5em;
   float: left;
+  background-color: #5eb1c3;
+  text-align: center;
+  border-bottom: 5px solid #4b8e9c;
   color: white;
-  box-shadow: 10px 10px 5px grey;
+  font-size: 1.5em;
+}
+
+#tickets {
+  background-color: #fe6c5d;
+  border-bottom: 5px solid #cc5649;
 }
 
 .navBit:hover {
-  background-color: aliceblue;
+  background-color: #0d6884;
   transition: 0.2s;
 }
 
-/* Need to specify that this should only apply to links in the navbar, and these "links" should be replaced with a dropdown menu */
-.clickable {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  padding: 2em;
-  margin: -2em;
+#tickets:hover {
+  background-color: chocolate;
+  transition: 0.2s;
 }
 
 /* Content attributes */
