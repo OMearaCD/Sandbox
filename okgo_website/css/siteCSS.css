@@ -1,0 +1,165 @@
+html {
+background-image:url("../images/backgroundSmall.png");
+    background-size:cover;
+    outline: 4px solid #c12526;
+    outline-offset: -3em;
+}
+
+/* Header Properties */
+a:hover {
+    color:white;
+    transition:0.5s;
+}
+a {
+    color:black;
+}
+
+#logo {
+    width:20%;
+    float:left;
+    position:absolute;
+}
+
+nav {
+    float: right;
+    width:80%;
+}
+
+nav li {
+    display:block;
+    float:left;
+    margin-top:1em;
+    padding:20px;
+    font-size:2.5em;
+    font-family:"Century Gothic", sans-serif;
+}
+
+ul {
+    list-style:none;
+}
+
+/* Newsbox */
+
+.newsBox {
+    margin:50px;
+    width:60%;
+    position: absolute;
+    right:25px;
+    top:16.3em;
+}
+
+.newsBox h1, h2, h3 {
+    text-align:center;
+    color:#f9cd1b;
+    font-weight:100;
+}
+
+h1, h2, h3 {
+    font-family:"Century Gothic", sans-serif;
+}
+
+.box {
+    background-color: #c12526;
+    color:white;
+    margin-bottom:20px;
+    height:185px;
+    outline: 4px solid #c12526;
+}
+
+.box img {
+    width:30%;
+    float:left;
+    padding-right:15px;
+}
+
+.container {
+   margin:30px;
+}
+
+#clouds {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+/* Sidebar Properties */
+.sidebar {
+    float:left;
+    position:absolute;
+    top:24.2em;
+    color:black;
+    width:25%;
+    border: 4px solid #c12526;
+    margin-left:33px;
+}
+
+#tourDates {
+    background-color: #c12526;
+    float:left;
+    padding:5px;
+    width:20%;
+}
+.sidebar li {
+    margin-left:20px;
+}
+
+#tourLocations {
+    color:black;
+    float:right;
+    padding:5px;
+
+}
+
+#twitter {
+    float:left;
+    position:absolute;
+    width:25%;
+    border: 4px solid #c12526;
+    margin-left:33px;
+    top:39em;
+}
+
+p, li {
+    font-family:"Century Gothic", sans-serif;
+}
+
+/* Footer Properties */
+
+#footerPusher {
+    clear:both;
+    opacity:0;
+}
+
+#footerPusher img {
+    width:25%;
+}
+
+footer {
+    background-color: #c12526;
+    width:89.5%;
+    margin-left:auto;
+    margin-right:auto;
+    clear:both;
+        padding:30px;
+}
+
+footer img {
+    width:20%;
+    right:7%;
+    position:absolute;
+}
+
+footer p {
+    color:white;
+}
+
+footer ul {
+    margin-left:43%;
+}
+
+footer li {
+    color:white;
+}
+
+
