@@ -1,6 +1,10 @@
 # Sandbox
 Collection of mini-projects I've done for practice and to test out newly-learned functionalities. Mostly single-function.
 
+OKgosite - A mockup of a website turned into an actual thing. 
+
+navbar - A navbar mimicking the one on the website of the Newport Aquarium. Uses Datejs for date checking. A work in progress.
+
 car_comparison - A form for users to input information about two different cars. When they hit submit, a CSV file with a table comparing the information entered is downloaded, and the user is redirected to a "success" page.
 
 logoFadein.html - Features a transparent logo that becomes opaque when the user hovers over it, with a .3s delay.
