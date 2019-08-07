@@ -9,7 +9,7 @@ car_comparison - A form for users to input information about two different cars.
 
 logoFadein.html - Features a transparent logo that becomes opaque when the user hovers over it, with a .3s delay.
 
-navbar.html - Uses cubic-bezier to make a neat little navbar with items that expand and change color when hovered over. See comeara.com for an example.
+bezierNavbar.html - Uses cubic-bezier to make a neat little navbar with items that expand and change color when hovered over. See comeara.com for an example.
 
 demibot.js - Small bot made with Node.js and Discord.js. Uses the Discord API to respond to what users type in Discord chat. Posts memes, funny faces, and responds to certain key phrases. A work in progress.
 
