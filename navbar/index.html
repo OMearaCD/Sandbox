@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="css/sass.css">
+    <meta charset="UTF-8">
+    <script src="libraries/date-en-US.js" type="text/javascript"></script>
+       
+      
+</head>
+
+<body>
+        <header>
+            <a href=#><img src="aquariumLogo.png" id="logo"/></a>
+            <p>Sample my sample text!</p>
+            <p id="demo"></p>
+    </header> 
+    <nav>
+
+    
+        <span class="navBit"><a class="clickable" href=#>Buy Tickets</a></span>
+        <span class="navBit">Plan Your Visit</span>
+        <span class="navBit">Sea, Touch, & Explore</span>
+        <span class="navBit">Host An Event</span>
+        <span class="navBit">Groups & Education</span>
+        
+    
+    </nav>
+<div class="content">
+    <p>Hello, I'm sample text! Nice to meet you.</p>
+    </div>
+
+    <!-- To be used with Datejs -->
+    <script>
+        
+        /* This works, but I'm sure there is an easier way to do this than defining a bunch of variables and if elses. There's got to be a way to read the day of the week from the date.today */
+
+    var d= Date.today().is().friday();
+    var e = Date.today().is().saturday();
+    var f = Date.today().is().sunday();
+    var p= Date.today();
+        if (d==true) {
+    document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 7:00 PM";
+        }
+        else if (e == true) {
+            document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 8:00 PM";
+        }
+        
+        else if (f == true) {
+           document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 6:00 PM"; 
+        }
+        
+        else {
+            document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 5:00 PM";
+        }
+        
+        /* You could use if else to display hours, or even mention if the aquarium is closed */
+    </script>
+</body>
+</html>
