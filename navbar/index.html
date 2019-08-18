@@ -4,32 +4,54 @@
     <link rel="stylesheet" href="css/sass.css">
     <meta charset="UTF-8">
     <script src="libraries/date-en-US.js" type="text/javascript"></script>
-       
-      
-</head>
 
-<body>
-        <header>
+    <header>
             <a href=#><img src="aquariumLogo.png" id="logo"/></a>
             <p id="demo"></p>
-    </header> 
-    <nav>
+        <p><img src="images/icons/calendar.png" class="icon"><a href=#> Calendar & Hours</a> | 800-444-4444</p>
 
+    </header> 
+</head>
+<body>
     
-        <span class="navBit" id="tickets">Buy Tickets</span>
-        <span class="navBit">Plan Your <br>Visit</span>
-        <span class="navBit">Sea, Touch, & <br>Explore</span>
-        <span class="navBit">Host An <br>Event</span>
-        <span class="navBit">Groups & <br>Education</span>
+    
+<nav>
+    <div id="leftSide">
+        <div class="navWrapper"><p></p></div>
+    </div>
+    
+    <div class="navContainer" id="tickets">
+        <div class="navWrapper"><p>Buy Tickets</p></div>
+    </div>
+    
+    <div class="navContainer">
+        <div class="navWrapper"><p>Plan Your <br>Visit</p></div>
+    </div>
+    
+    <div class="navContainer">
+        <div class="navWrapper"><p>Sea, Touch, & <br>Explore</p></div>
+    </div>
+    
+    <div class="navContainer">
+        <div class="navWrapper"><p>Host An <br>Event</p></div>
+    </div>
+    
+    <div class="navContainer">
+        <div class="navWrapper"><p>Groups & <br>Education</p></div>
+    </div>
+    
+    <div id="rightSide">
+        <div class="navWrapper"><p></p></div>
+    </div>
     
     </nav>
-<div class="content">
+    
+    <div id="content">
+    
     <img src="images/shark.jpg">
-    <p>Hello, I'm sample text! Nice to meet you.</p>
-    </div>
+</div>
 
     <!-- To be used with Datejs -->
-    
     <script type = "text/javascript">
          var dt = Date.today();
          var dow = dt.getDay();
@@ -41,32 +63,12 @@
              document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 8pm"); 
         }
         
-        else if (dow ==1) {
+        else if (dow ==0) {
             document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 6pm"); 
         }
         else {
         document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 5pm"); 
         }
       </script> 
-    <!--
-     var d= Date.today().is().friday();
-    var e = Date.today().is().saturday();
-    var f = Date.today().is().sunday();
-    var p= Date.today();
-        if (d==true) {
-    document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 7:00 PM";
-        }
-        else if (e == true) {
-            document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 8:00 PM";
-        }
-        
-        else if (f == true) {
-           document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 6:00 PM"; 
-        }
-        
-        else {
-            document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 5:00 PM";
-        }
--->
 </body>
 </html>

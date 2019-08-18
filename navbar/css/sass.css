@@ -1,66 +1,15 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* End CSS Reset */
 /* Header Top attributes */
 header {
   background-color: #053250;
   height: 7.5em;
 }
-
 header p {
   color: white;
+  margin: 0;
+}
+
+body {
+  margin: 0;
 }
 
 #logo {
@@ -71,19 +20,28 @@ header p {
 
 #demo {
   float: left;
-  margin-top: 4.5em;
+  margin-top: 5em;
 }
 
-/* Header Bottom attributes */
-.navBit {
-  width: 20%;
-  height: 4.5em;
-  float: left;
+/* Nav stuff */
+nav p {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.navContainer {
   background-color: #5eb1c3;
-  text-align: center;
   border-bottom: 7px solid #4b8e9c;
+  width: 18%;
+  height: 4em;
+  text-align: center;
+  float: left;
   color: white;
   font-size: 1.5em;
+}
+
+.navWrapper {
+  display: inline-block;
 }
 
 #tickets {
@@ -91,7 +49,25 @@ header p {
   border-bottom: 7px solid #cc5649;
 }
 
-.navBit:hover {
+#leftSide {
+  width: 5%;
+  height: 6em;
+  text-align: center;
+  float: left;
+  background-color: #fe6c5d;
+  border-bottom: 7px solid #cc5649;
+}
+
+#rightSide {
+  float: right;
+  background-color: #5eb1c3;
+  width: 5%;
+  height: 6em;
+  border-bottom: 7px solid #4b8e9c;
+}
+
+/* Hover */
+.navContainer:hover {
   background-color: #0d6884;
   transition: 0.2s;
 }
@@ -101,26 +77,30 @@ header p {
   transition: 0.2s;
 }
 
-/* Content attributes */
-.content {
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+/* Content + Images*/
+.icon {
+  width: 20px;
+}
+
+#content {
   clear: both;
 }
-.content img {
+#content img {
   width: 100%;
 }
 
-/* Font and Text attributes */
 p {
-  font: 100% Helvetica, sans-serif;
-}
-
-span {
   font: 100% Helvetica, sans-serif;
 }
 
 /* Media Queries */
 @media only screen and (max-width: 800px) {
-  .navBit {
+  .navContainer, #leftSide, #rightSide {
     display: none;
   }
 
