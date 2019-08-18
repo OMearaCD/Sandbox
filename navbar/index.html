@@ -11,7 +11,6 @@
 <body>
         <header>
             <a href=#><img src="aquariumLogo.png" id="logo"/></a>
-            <p>Sample my sample text!</p>
             <p id="demo"></p>
     </header> 
     <nav>
@@ -22,19 +21,35 @@
         <span class="navBit">Sea, Touch, & <br>Explore</span>
         <span class="navBit">Host An <br>Event</span>
         <span class="navBit">Groups & <br>Education</span>
-        
     
     </nav>
 <div class="content">
+    <img src="images/shark.jpg">
     <p>Hello, I'm sample text! Nice to meet you.</p>
     </div>
 
     <!-- To be used with Datejs -->
-    <script>
+    
+    <script type = "text/javascript">
+         var dt = Date.today();
+         var dow = dt.getDay();
+        /* Need to translate these numbers into plain English */
+        if (dow ==5) {
+            document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 7pm"); 
+        }
+        else if (dow == 6) {
+             document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 8pm"); 
+        }
         
-        /* This works, but I'm sure there is an easier way to do this than defining a bunch of variables and if elses. There's got to be a way to read the day of the week from the date.today */
-
-    var d= Date.today().is().friday();
+        else if (dow ==1) {
+            document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 6pm"); 
+        }
+        else {
+        document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 5pm"); 
+        }
+      </script> 
+    <!--
+     var d= Date.today().is().friday();
     var e = Date.today().is().saturday();
     var f = Date.today().is().sunday();
     var p= Date.today();
@@ -52,7 +67,6 @@
         else {
             document.getElementById("demo").innerHTML = p + " - Today's Hours 9:00 AM - 5:00 PM";
         }
-
-    </script>
+-->
 </body>
 </html>

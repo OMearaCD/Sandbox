@@ -69,6 +69,11 @@ header p {
   height: 5em;
 }
 
+#demo {
+  float: left;
+  margin-top: 4.5em;
+}
+
 /* Header Bottom attributes */
 .navBit {
   width: 20%;
@@ -76,14 +81,14 @@ header p {
   float: left;
   background-color: #5eb1c3;
   text-align: center;
-  border-bottom: 5px solid #4b8e9c;
+  border-bottom: 7px solid #4b8e9c;
   color: white;
   font-size: 1.5em;
 }
 
 #tickets {
   background-color: #fe6c5d;
-  border-bottom: 5px solid #cc5649;
+  border-bottom: 7px solid #cc5649;
 }
 
 .navBit:hover {
@@ -100,6 +105,9 @@ header p {
 .content {
   clear: both;
 }
+.content img {
+  width: 100%;
+}
 
 /* Font and Text attributes */
 p {
@@ -109,5 +117,23 @@ p {
 span {
   font: 100% Helvetica, sans-serif;
 }
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  .navBit {
+    display: none;
+  }
+
+  #demo {
+    display: none;
+  }
+
+  header img {
+    display: block;
+    margin-left: 25%;
+  }
+}
+/* Medium */
+/* Small */
 
 /*# sourceMappingURL=sass.css.map */
