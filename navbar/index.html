@@ -3,7 +3,6 @@
 <head>
     <link rel="stylesheet" href="css/sass.css">
     <meta charset="UTF-8">
-    <script src="libraries/date-en-US.js" type="text/javascript"></script>
 
     <header>
             <a href=#><img src="aquariumLogo.png" id="logo"/></a>
@@ -53,21 +52,23 @@
 
     <!-- To be used with Datejs -->
     <script type = "text/javascript">
-         var dt = Date.today();
+         var dt = new Date();
          var dow = dt.getDay();
+        var dn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        var mn = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         /* Need to translate these numbers into plain English */
         if (dow ==5) {
-            document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 7pm"); 
+            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 7pm"); 
         }
         else if (dow == 6) {
-             document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 8pm"); 
+             document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 8pm"); 
         }
         
         else if (dow ==0) {
-            document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 6pm"); 
+            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 6pm"); 
         }
         else {
-        document.getElementById("demo").innerHTML = (" " + dow + dt.getMonth() + dt.getDate() + " - Today's Hours 9am - 5pm"); 
+        document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 5pm"); 
         }
       </script> 
 </body>
