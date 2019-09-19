@@ -14,6 +14,27 @@ body {
     margin:0;
 }
 
+/* Search bar stuff */
+
+input {
+    background-color:#45667c;
+    height:2em;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+font-size: 1.2em;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
 #logo {
     padding:15px;
     float:left;
@@ -23,6 +44,17 @@ body {
 #demo {
     float:left;
     margin-top:5em;
+    font-weight:bold;
+}
+
+#rightHeader {
+    float:right;
+    
+}
+
+#calendar {
+    float:left;
+    margin-top:2em;
 }
 
         /* Nav stuff */
@@ -87,7 +119,7 @@ a:link {
 
 /* Content + Images*/
 .icon {
-    width:20px;
+    width:1.2em;
 }
 #content {
     clear:both;
@@ -117,6 +149,10 @@ p {
         img {
             display: block;
             margin-left: 25%;
+        }
+        
+        p {
+            display:none;
         }
     }
 }

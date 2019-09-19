@@ -7,7 +7,15 @@
     <header>
             <a href=#><img src="aquariumLogo.png" id="logo"/></a>
             <p id="demo"></p>
-        <p><img src="images/icons/calendar.png" class="icon"><a href=#> Calendar & Hours</a> | 800-444-4444</p>
+        
+        <!-- Move this into position -->
+        <p id="calendar"><img src="images/icons/calendar.png" class="icon"><a href=#> <b>Calendar & Hours</b></a> | 1-800-444-4444</p>
+        
+        <!-- Need to make these centered on top of each other, in the middle of the header, and closer to the right side. The magnifying glass also needs to be centered next to the search bar -->
+        <div id="login">
+            <p><a href=#>Login</a> | <a href=#>Create Account</a></p>
+            <p id="search"><input type="text" placeholder="Search"><img src="images/icons/magnifyingGlass.png" class="icon"></p>
+        </div>
 
     </header> 
 </head>
@@ -50,25 +58,23 @@
     <img src="images/shark.jpg">
 </div>
 
-    <!-- To be used with Datejs -->
     <script type = "text/javascript">
          var dt = new Date();
          var dow = dt.getDay();
-        var dn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-        var mn = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-        /* Need to translate these numbers into plain English */
+        var dn = ['<b>Sun</b>', '<b>Mon</b>', '<b>Tue</b>', '<b>Wed</b>', '<b>Thu</b>', '<b>Fri</b>', 'Sat']
+        var mn = ['<b>January</b>','<b>February</b>', '<b>March</b>', '<b>April</b>', '<b>May</b>', '<b>June</b>', '<b>July</b>', '<b>August</b>', '<b>September</b>', '<b>October</b>', '<b>November</b>', '<b>December</b>']
         if (dow ==5) {
-            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 7pm"); 
+            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9:00 AM - 7:00 PM"); 
         }
         else if (dow == 6) {
-             document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 8pm"); 
+             document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9:00 AM - 8:00 PM"); 
         }
         
         else if (dow ==0) {
-            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 6pm"); 
+            document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9:00 AM - 6:00 PM"); 
         }
         else {
-        document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9am - 5pm"); 
+        document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9:00 AM - 5:00 PM"); 
         }
       </script> 
 </body>
