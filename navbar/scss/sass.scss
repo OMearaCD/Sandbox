@@ -19,6 +19,8 @@ body {
 input {
     background-color:#45667c;
     height:2em;
+    border: 1px solid white;
+    margin:1em;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -54,7 +56,18 @@ font-size: 1.2em;
 
 #calendar {
     float:left;
-    margin-top:2em;
+    margin-top:1em;
+    margin-left:-3em;
+    text-transform:uppercase;
+}
+
+#login {
+    float:right;
+    text-align:center;
+    text-transform: uppercase;
+    font-size:0.8em;
+    margin-top:2.3em;
+    margin-right:2.3em;
 }
 
         /* Nav stuff */
@@ -66,7 +79,7 @@ nav p {
     background-color:#5eb1c3;
     border-bottom: 7px solid #4b8e9c;
     width:18%;
-    height:4em;
+    height:4.5em;
     text-align:center;
     float:left;
     color:white;
@@ -84,7 +97,7 @@ nav p {
         
 #leftSide {
     width:5%;
-    height:6em;
+    height:6.75em;
     text-align:center;
     float:left;
     background-color: #fe6c5d;
@@ -96,7 +109,7 @@ nav p {
     float:right;
     background-color:#5eb1c3;
     width:5%;
-    height:6em;
+    height:6.75em;
     border-bottom: 7px solid #4b8e9c;
 }
 
@@ -119,7 +132,7 @@ a:link {
 
 /* Content + Images*/
 .icon {
-    width:1.2em;
+    width:1em;
 }
 #content {
     clear:both;
@@ -136,7 +149,7 @@ p {
 }
 
 /* Media Queries */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
   .navContainer, #leftSide, #rightSide {
     display:none;
   }
@@ -148,7 +161,7 @@ p {
     header {      
         img {
             display: block;
-            margin-left: 25%;
+/* Need to center the logo and keep it centered as screen size decreases */
         }
         
         p {
