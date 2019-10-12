@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="css/sass.css">
     <meta charset="UTF-8">
 
+     
+</head>
+<body>
     <header>
             <a href=#><img src="aquariumLogo.png" id="logo"/></a>
             <p id="demo"></p>
@@ -16,10 +19,7 @@
             <p><a href=#>Login </a> | <a href=#> Create Account</a></p>
             <p id="search"><input type="text" placeholder="Search"><img src="images/icons/magnifyingGlass.png" class="icon"></p>
         </div>
-    </header> 
-</head>
-<body>
-    
+    </header>
     
 <nav>
     <div id="leftSide">
@@ -48,19 +48,18 @@
     
     <div id="rightSide">
         <div class="navWrapper"><p></p></div>
-    </div>
+    </div> 
+</nav>
     
-    </nav>
-    
-    <div id="content">
+    <main>
     
     <img src="images/shark.jpg">
-</div>
+</main>
 
     <script type = "text/javascript">
          var dt = new Date();
          var dow = dt.getDay();
-        var dn = ['Sun', 'Mon', '<b>Tue</b>', '<b>Wed</b>', '<b>Thu</b>', 'Fri', 'Sat']
+        var dn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
         var mn = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         if (dow ==5) {
             document.getElementById("demo").innerHTML = (" " + dn[dow] + ", " + mn[dt.getMonth()] + " " + dt.getDate() + " — Today's Hours 9:00 AM - 7:00 PM"); 

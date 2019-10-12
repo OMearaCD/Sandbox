@@ -134,10 +134,10 @@ a:link {
   width: 1em;
 }
 
-#content {
+main {
   clear: both;
 }
-#content img {
+main img {
   width: 100%;
 }
 
