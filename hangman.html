@@ -1,0 +1,75 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Hangman Game</title>
+    <style>
+    p {
+        font-size:2em;
+        }
+        button {
+            height:3em;
+            width:3em;
+        }
+        .submit {
+            width:10em;
+        }
+    </style>
+</head>
+<body>
+    <p id="wordDashes">Welcome to my Hangman Game!</p>
+    <!-- Add validation here. User is not allowed to input a number -->
+    Type a letter or guess the word:<input type="text" id="guessBox"><br>
+    <button class="submit" onclick="guess()">Guess!</button>
+    <br>
+    <p>Guesses left:</p><p id="guessesRemaining">Null</p>
+  <button class="submit" onclick="newWord()">New game!</button>  
+
+</body>
+ 
+    <script>
+        var word = "";
+  function newWord(){
+    var rando = Math.floor(Math.random() * 6);
+    
+
+    if (rando === 0) {
+        word = "giraffe";
+    }
+    else if (rando === 1) {
+        word = "antelope";
+    }
+      
+     else if (rando === 2) {
+        word = "elephant";
+    }
+      else if (rando === 3) {
+          word = "crocodile";
+      }
+      
+      else if (rando === 4) {
+          word = "leopard";
+      }
+      
+    else {
+        word = "zebra";
+    }
+
+    var wordLength = word.length;
+    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>" + "_ ".repeat(wordLength);
+    }
+        
+        function guess(){
+    var guess = document.getElementById("guessBox").value;
+
+    var letterPos = word.indexOf(guess);
+
+        }
+        if letterPos === -1 {
+            
+        }
+        else {
+            
+        }
+
+    </script>
+</html>
