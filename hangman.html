@@ -1,3 +1,4 @@
+
 <!doctype HTML>
 <html>
 <head>
@@ -17,8 +18,7 @@
 </head>
 <body>
     <p id="wordDashes">Welcome to my Hangman Game!</p>
-    <!-- Add validation here. User is not allowed to input a number -->
-    Type a letter or guess the word:<input type="text" id="guessBox"><br>
+    Type a letter or guess the word:<input type="text" id="guessBox" onkeyup="this.value = this.value.replace(/[^a-z]/, '')"><br>
     <button class="submit" onclick="guess()">Guess!</button>
     <br>
     <p>Guesses left:</p><p id="guessesRemaining">Null</p>
@@ -31,7 +31,6 @@
   function newWord(){
     var rando = Math.floor(Math.random() * 6);
     
-
     if (rando === 0) {
         word = "giraffe";
     }
@@ -53,23 +52,23 @@
     else {
         word = "zebra";
     }
-
-    var wordLength = word.length;
+    const wordLength = word.length;
     document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>" + "_ ".repeat(wordLength);
     }
         
         function guess(){
-    var guess = document.getElementById("guessBox").value;
-
-    var letterPos = word.indexOf(guess);
-
-        }
-        if letterPos === -1 {
-            
+    var guessesLeft = word.length;
+    document.getElementById("guessesRemaining").innerHTML=guessesLeft;
+    var userGuess = document.getElementById("guessBox").value;
+    var letterPos = word.indexOf(userGuess);
+        
+        if (letterPos === -1) {
+            guessesLeft -- 1;
         }
         else {
             
         }
-
+        
+        }
     </script>
 </html>
