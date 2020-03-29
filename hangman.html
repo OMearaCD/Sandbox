@@ -22,6 +22,7 @@
     <button class="submit" onclick="guess()">Guess!</button>
     <br>
     <p>Guesses left:</p><p id="guessesRemaining">Null</p>
+    <p id="testArea">Hello</p>
   <button class="submit" onclick="newWord()">New game!</button>  
 
 </body>
@@ -53,22 +54,55 @@
         word = "zebra";
     }
     const wordLength = word.length;
-    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>" + "_ ".repeat(wordLength);
+
+      /* This is a string */ var dashes = "_ ".repeat(wordLength);
+      /* This converts that string to an array */ var dashArray = dashes.split(" ");
+
+      
+    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>" + dashes;
+      /* This var is an array containing all the letters in the generated word. */
+      var window.answerWord = word.split("");
+      
+      /* v Testing code, remove when done v */
+     
+      
     }
+        ;
+        console.log(answerWord)
         
-        function guess(){
-    var guessesLeft = word.length;
-    document.getElementById("guessesRemaining").innerHTML=guessesLeft;
+function guess(){
+     /*'wordLength' is not global. Need to set it to global so that other functions can use it. The answerWord array also needs to be global.*/
+
+   var guessesLeft = 6;
+    document.getElementById("guessesRemaining").innerHTML= guessesLeft;
     var userGuess = document.getElementById("guessBox").value;
-    var letterPos = word.indexOf(userGuess);
+    
+    /*This returns an array -> */function find(userGuess,answerWord){
+        var findResult = [];
+        var idx= answerWord.indexOf(userGuess);
+        while (idx != -1) {
+            findResult.push(idx);
+            idx = answerWord.indexOf(userGuess, idx + 1);
+        }
+        return findResult;
+    }
+    
+    if (findResult === -1) {
+    document.getElementById("testArea").innerHTML="Hello!";
+    }
+    else {
+         document.getElementById("testArea").innerHTML="Hello world!";
+       /*Replace the corresponding dash with the letter
+    dashArray[position of the letter] = userGuess; */
+    }
+    
+    /*This carries out 'checkGuess' for each letter in the word. You could check to see if the letter matches 'userGuess.' If it does, you should replace the dashes in 'dashArray' with the letter in the same position that that letter is in in the array. So if the word contains an "n" at [3], then the fourth dash should be replaced with "n". If the letter does not match, then nothing happens. If none of the letters match, guessesLeft should be reduced by 1.*/
+    
+    }
+ 
+    
         
-        if (letterPos === -1) {
-            guessesLeft -- 1;
-        }
-        else {
-            
-        }
+
         
-        }
     </script>
 </html>
