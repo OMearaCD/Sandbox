@@ -9,7 +9,7 @@
         }
         button {
             height:3em;
-            width:3em;
+            width:7em;
         }
         .submit {
             width:10em;
@@ -18,12 +18,12 @@
 </head>
 <body>
     <p id="wordDashes">Welcome to my Hangman Game!</p>
+    <p id="testArea">Hello</p>
+    <p id="wrongGuesses">Incorrect guesses</p>
     Type a letter or guess the word:<input type="text" id="guessBox")><br>
     <button onclick="guess()">Guess!</button>
     <br>
-    <p>Guesses left:</p><p id="guessesRemaining">Null</p>
-    <p id="testArea">Hello</p>
-    <p id="test2">Test 2</p>
+    <p>Guesses left:</p><p id="guessesRemaining">6 guesses remaining</p>
   <button class="submit" onclick="newWord()">New game!</button>  
 
 </body>
@@ -57,9 +57,10 @@
     }
     const wordLength = word.length;
 
-      /* This is a string */ var dashes = "_ ".repeat(wordLength);
-      /* This converts that string to an array */ var dashArray = dashes.split(" "); 
-    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>" + dashes;
+      /* This is a string */ const dashes = "_ ".repeat(wordLength);
+      /* This converts that string to an array */ dashArray = dashes.split(" "); 
+    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>";
+      document.getElementById("testArea").innerHTML= dashArray;
       /* This var is an array containing all the letters in the generated word. */
       answerWord = word.split("");
 
@@ -68,23 +69,45 @@
         
 function guess(){
     const userGuess = document.getElementById("guessBox").value;
+    var wrongGuesses = [];
+    /* this returns the index of the first object, but doesn't for additional letter appearances in the word */
+
+    if (answerWord.includes(userGuess)){
+        /* Works, but index needs to be index of all objects that are the user's guess */
+   var index = answerWord.indexOf(userGuess);
+        dashArray[index] = userGuess;
+        document.getElementById("testArea").innerHTML= dashArray;
+    }
+
+    else if (guessesLeft === 0){
+        alert("Game Over!")
+        /* Function should stop here */
+    }
     
-    /* this returns the letter in the array, not its position */
-    var result = answerWord.filter(word => word.includes(userGuess));
-console.log(result);
-    
-    if (result.length === 0) {
+    else {
     guessesLeft --;
     }
-    else {
-         document.getElementById("testArea").innerHTML="Hello world!";
-       /*Replace the corresponding dash with the letter
-    dashArray[position of the letter] = userGuess; */
-    }
+
     document.getElementById("guessesRemaining").innerHTML= guessesLeft + " guesses remaining";
-    
-    }
-/* Currently, your game does not reset after "new game" is clicked. Your game should end when guessesLeft reaches 0. User should not be able to type numbers. Maybe add a separate input box for guessing the word? */
+                if (!dashArray.includes("_")) {
+                alert ("You won!")
+            }
+}
+
+/* TO DO:
+- List off all incorrect guesses
+- Make box to guess word
+- Prohibit users from typing numbers or multiple characters in guess box
+- Clear guess box when "guess" is clicked
+- Reset "guesses remaining" when "new game" is clicked
+- Make index return location of all letters in the word that match the user's guess
+- Alert user when they enter a letter that has already been guessed and do not let the "guess" function happen
+*/
+        /* DONE:
+        - Guess countdown
+        - Alerts user when they win or lose and ends game
+        - Dashes replaced with correct guesses
+        */
   
     </script>
 </html>
