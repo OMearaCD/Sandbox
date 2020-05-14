@@ -4,9 +4,7 @@
 <head>
     <title>Hangman Game</title>
     <style>
-    p {
-        font-size:2em;
-        }
+
         button {
             height:3em;
             width:7em;
@@ -17,13 +15,14 @@
     </style>
 </head>
 <body>
-    <p id="wordDashes">Welcome to my Hangman Game!</p>
-    <p id="testArea">Hello</p>
-    <p id="wrongGuesses">Incorrect guesses</p>
-    Type a letter or guess the word:<input type="text" id="guessBox")><br>
+    <h1 id="wordDashes">Welcome to my Hangman Game!</h1>
+    <h2 id="dashes"></h2>
+    <h2 id="wrongGuesses"></h2>
+    <h2>Guesses left:</h2><h3 id="guessesRemaining">6 guesses remaining</h3>
+    Type a letter or guess the word:<input type="text" id="guessBox" onfocus="this.value=''" value="Enter a letter")>
     <button onclick="guess()">Guess!</button>
     <br>
-    <p>Guesses left:</p><p id="guessesRemaining">6 guesses remaining</p>
+    
   <button class="submit" onclick="newWord()">New game!</button>  
 
 </body>
@@ -31,6 +30,7 @@
     <script>
         var word = "";
         var guessesLeft = 6;  
+        var wrongGuesses = [];
   function newWord(){
     var rando = Math.floor(Math.random() * 6);
     
@@ -55,28 +55,35 @@
     else {
         word = "zebra";
     }
-    const wordLength = word.length;
+    wordLength = word.length;
 
       /* This is a string */ const dashes = "_ ".repeat(wordLength);
       /* This converts that string to an array */ dashArray = dashes.split(" "); 
     document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>";
-      document.getElementById("testArea").innerHTML= dashArray;
-      /* This var is an array containing all the letters in the generated word. */
+      document.getElementById("dashes").innerHTML= dashArray;
       answerWord = word.split("");
-
+      guessesLeft = 6;
+      document.getElementById("guessesRemaining").innerHTML= guessesLeft + " guesses remaining";
+      wrongGuesses=[];
+      document.getElementById("wrongGuesses").innerHTML = "Incorrect: " + wrongGuesses;
     };  
-
-        
+      
 function guess(){
     const userGuess = document.getElementById("guessBox").value;
-    var wrongGuesses = [];
+    
     /* this returns the index of the first object, but doesn't for additional letter appearances in the word */
 
     if (answerWord.includes(userGuess)){
+        
+        /*for (i=0;i<wordLength;i++) {
+            
+            dashArray[index] = userGuess;
+             You could put something here that checks if the part of the index i is on matches the userGuess and return the index if it does 
+        } */
         /* Works, but index needs to be index of all objects that are the user's guess */
    var index = answerWord.indexOf(userGuess);
         dashArray[index] = userGuess;
-        document.getElementById("testArea").innerHTML= dashArray;
+        document.getElementById("dashes").innerHTML= dashArray;
     }
 
     else if (guessesLeft === 0){
@@ -86,27 +93,35 @@ function guess(){
     
     else {
     guessesLeft --;
+    wrongGuesses.push(userGuess);
     }
 
     document.getElementById("guessesRemaining").innerHTML= guessesLeft + " guesses remaining";
+    document.getElementById("wrongGuesses").innerHTML = "Incorrect: " + wrongGuesses;
                 if (!dashArray.includes("_")) {
                 alert ("You won!")
             }
-}
+    console.log(wrongGuesses)
+};
 
 /* TO DO:
-- List off all incorrect guesses
-- Make box to guess word
-- Prohibit users from typing numbers or multiple characters in guess box
-- Clear guess box when "guess" is clicked
-- Reset "guesses remaining" when "new game" is clicked
+
 - Make index return location of all letters in the word that match the user's guess
 - Alert user when they enter a letter that has already been guessed and do not let the "guess" function happen
+- Make box to guess word
+- Prohibit users from typing numbers or multiple characters in guess box
+- Remove commas from word array and replace with spaces
+
+AFTER EVERYTHING IS DONE:
+- Remake the game so that it can be played by two people via socket.io
 */
         /* DONE:
         - Guess countdown
         - Alerts user when they win or lose and ends game
         - Dashes replaced with correct guesses
+        - Guesses Remaining resets on new game
+        - Guess input box clears on focus
+        - Incorrect guesses stored in array and displayed
         */
   
     </script>
