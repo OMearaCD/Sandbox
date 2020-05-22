@@ -31,30 +31,11 @@
         var word = "";
         var guessesLeft = 6;  
         var wrongGuesses = [];
+        const words = ['giraffe', 'antelope', 'elephant', 'crocodile', 'leopard', 'zebra'];
   function newWord(){
+      
     var rando = Math.floor(Math.random() * 6);
-    
-    if (rando === 0) {
-        word = "giraffe";
-    }
-    else if (rando === 1) {
-        word = "antelope";
-    }
-      
-     else if (rando === 2) {
-        word = "elephant";
-    }
-      else if (rando === 3) {
-          word = "crocodile";
-      }
-      
-      else if (rando === 4) {
-          word = "leopard";
-      }
-      
-    else {
-        word = "zebra";
-    }
+    word = words[rando];
     wordLength = word.length;
 
       /* This is a string */ const dashes = "_ ".repeat(wordLength);
@@ -70,16 +51,7 @@
       
 function guess(){
     const userGuess = document.getElementById("guessBox").value;
-    
-    /* this returns the index of the first object, but doesn't for additional letter appearances in the word */
-
     if (answerWord.includes(userGuess)){
-        
-        /*for (i=0;i<wordLength;i++) {
-            
-            dashArray[index] = userGuess;
-             You could put something here that checks if the part of the index i is on matches the userGuess and return the index if it does 
-        } */
         /* Works, but index needs to be index of all objects that are the user's guess */
    var index = answerWord.indexOf(userGuess);
         dashArray[index] = userGuess;
@@ -101,7 +73,7 @@ function guess(){
                 if (!dashArray.includes("_")) {
                 alert ("You won!")
             }
-    console.log(wrongGuesses)
+
 };
 
 /* TO DO:
@@ -114,8 +86,8 @@ function guess(){
 
 AFTER EVERYTHING IS DONE:
 - Remake the game so that it can be played by two people via socket.io
-*/
-        /* DONE:
+
+    DONE:
         - Guess countdown
         - Alerts user when they win or lose and ends game
         - Dashes replaced with correct guesses
