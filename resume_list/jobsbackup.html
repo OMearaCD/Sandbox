@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Job Wishlist</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/evil-icons@1.9.0/assets/evil-icons.min.js"></script>
+
+    </head>
+<body onload = "getLists() , addDeleteBtn()">
+     <div id="jobModal" class="modal">
+        <h2>Add A Job</h2>
+        <input type="text" id="company" placeholder="Company Name"><br>
+        <input type="text" id="job" placeholder="Job Title">
+        <button onclick="addJob()">Submit</button>
+        <button id="closer" onclick="closeModal()">Cancel</button>
+    </div>
+    <div id="jobsList">
+        
+        <h3>Wishlist</h3>
+        <button id="openModalBtn"  onclick="openModal()"><div data-icon="ei-plus"></div></button>
+        <ul id="list">
+
+        </ul>  
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+
+<script src="js/main.js"></script>
+    <script type="application/javascript">
+function reset() {
+    localStorage.clear();
+};
+        
+        </script>
+</body>
+</html>

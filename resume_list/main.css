@@ -1,0 +1,79 @@
+html {
+    background-color:aliceblue;
+    font-family:'arial', sans-serif;
+}
+
+#jobsList h3 {
+    text-align:center;
+    color:purple;
+    margin-left:55px;
+}
+.modal {
+    display:none;
+    position:fixed;
+    width:30%;
+    height:60%;
+    z-index:1;
+    left: 35%;
+    right:50%;
+    background-color:white;
+    border-radius: 8px;
+    text-align:center;
+    color:purple;
+    box-shadow: 0px 5px 8px 2px lightgray;
+        }
+            button {
+                width: 100%;
+                height:4em;
+                margin-bottom:2em;
+                border-style:none;
+                background-color:white;
+                border-radius: 8px;
+                box-shadow: 0px 2px 2px 0px lightgray;
+                text-align:center;
+            }
+            .modal button {
+                background-color:purple;
+                color:white;
+                padding:10px;
+                width:80%;
+                margin:20px;
+            }
+            #jobsList {
+                width:20em;
+            }
+            #jobsList button {
+                width:120%;
+                margin-bottom:0;
+            }
+            li {
+                width:100%;
+                height:7em;
+                background-color:skyblue;
+                border-radius: 8px;
+                padding:2em;
+                margin-top:1em;
+                color:white;
+                box-shadow: 0px 3px 4px 2px lightgray;
+            }
+            input {
+                border-radius: 5px;
+                height:3em;
+                width:80%;
+                outline:none;
+                margin:5px;
+                border: 1px solid lightgray;
+            }
+            input:focus {
+             border: 1px solid purple;
+            }
+            ul {
+                list-style:none;
+                margin:0;
+                padding:0;
+            }
+            
+            .deleteBtn {
+            float:right;
+                width:5em!important;
+                background-color:red; 
