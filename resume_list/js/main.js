@@ -4,7 +4,7 @@ const li = document.getElementsByTagName("li");
 var companyName = [];
 var jobTitle = [];
 var jobList = document.getElementById("list");
-var entry = document.createElement("li");
+
   
 /* Modal control */
 function openModal(){
@@ -37,7 +37,8 @@ var i="";
 for (i=0;i<deleteButton.length;i++){
     var deleteIt=deleteButton[i];
     deleteIt.onclick = function(){
-    alert("aaa");
+        // Add more here
+    entry.style.display="none";
 }
 }
 
@@ -62,12 +63,11 @@ function addJob() {
     /* Add the array into localStorage */
     localStorage.setItem("companyTitle", JSON.stringify(companyArray));
     localStorage.setItem("jobTitle", JSON.stringify(jobArray));
-    
-    
-    
+
         var t= document.createTextNode(companyEntry);
         var h=document.createTextNode(jobEntry);
         var j = document.createElement("button");
+        var entry = document.createElement("li");
         j.className="deleteBtn";
         j.appendChild(document.createTextNode("X"))
         entry.appendChild(j);
