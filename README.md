@@ -1,6 +1,8 @@
 # Sandbox
 Collection of mini-projects I've done for practice and to test out newly-learned functionalities. Mostly single-function.
 
+resume list - A list of job titles and companies. Entries are saved in localstorage.
+
 OKgosite - A mockup of a website turned into an actual thing. 
 
 navbar - A navbar mimicking the one on the website of the Newport Aquarium. A work in progress.
