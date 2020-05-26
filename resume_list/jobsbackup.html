@@ -15,8 +15,8 @@
 <body onload = "getLists() , addDeleteBtn()">
      <div id="jobModal" class="modal">
         <h2>Add A Job</h2>
-        <input type="text" id="company" placeholder="Company Name"><br>
-        <input type="text" id="job" placeholder="Job Title">
+        <input type="text" id="company" placeholder="Company Name" onfocus="this.value=''" value="Company Name"><br>
+        <input type="text" id="job" placeholder="Job Title" onfocus="this.value=''" value="Job Title">
         <button onclick="addJob()">Submit</button>
         <button id="closer" onclick="closeModal()">Cancel</button>
     </div>

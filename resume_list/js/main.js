@@ -1,11 +1,10 @@
-/* TODO: Make these not global */
+/* TODO: you can probably make each entry an object, with the "job title" and "company name" properties */
 const modal = document.getElementById("jobModal");
 const li = document.getElementsByTagName("li");
 var companyName = [];
 var jobTitle = [];
 var jobList = document.getElementById("list");
 
-  console.log(localStorage.getItem("companyTitle"));
 /* Modal control */
 function openModal(){
     modal.style.display="block";    
@@ -31,14 +30,14 @@ function addDeleteBtn(){
     }
 }
 /*TODO: Fix this */
-/* This returns an object resembling an array, not the buttons themselves */
+/* This returns an object resembling an array, not the buttons themselves. Problem is probably that you're not calling this function on button click */
 var deleteButton = document.getElementsByClassName("deleteBtn");
-var i="";
-for (i=0;i<deleteButton.length;i++){
+
+for (var i=0;i<deleteButton.length;i++){
     var deleteIt=deleteButton[i];
     deleteIt.onclick = function(){
         // Add more here
-    entry.style.display="none";
+    alert("aaaah");
 }
 }
 
@@ -50,15 +49,14 @@ function addJob() {
     // Checking if both fields contain something 
     if (companyName !=="" && jobTitle !==""){
         
-    // Add user input as well as what's already in localsotrage to an array */
+    // Add user input as well as what's already in localstorage to an array */
 
     companyName.push(companyEntry);
-
     jobTitle.push(jobEntry);
         console.log(companyName);
         console.log(jobTitle);
         
-        /* Now you have an array of everything that was added on one page. These arrays empty on reload, so every time you add a new entry, you're running setItem, which overwrites localStorage with whatever has been added in this page. Anything already in there is removed. In addition, every job added adds "null" to the array, before the actual value. This will happen on the first job added because localstorage doesn't have anything in it yet, so when you push it, it pushes null. */
+        /* Now you have an array of everything that was added on one page. These arrays empty on reload, so every time you add a new entry, you're running setItem, which overwrites localStorage with whatever has been added in this page. Anything already in there is removed. */
 
     /* Add the array into localStorage */
     localStorage.setItem("companyTitle", JSON.stringify(companyName));
@@ -84,9 +82,9 @@ function addJob() {
 
 function getLists(){
  // Do this on page load
-if (typeof localStorage.getItem("companyTitle") !== null){companyName.push(localStorage.getItem("companyTitle"))
+if (localStorage.getItem("companyTitle") !== null){companyName.push(localStorage.getItem("companyTitle"))
                             };
-if (typeof localStorage.getItem("jobTitle")!== null){
+if (localStorage.getItem("jobTitle")!== null){
         jobTitle.push(localStorage.getItem("jobTitle"))
 };
     
@@ -98,5 +96,6 @@ if (typeof localStorage.getItem("jobTitle")!== null){
     entry.appendChild(document.createTextNode(companyArray[i]));
     entry.appendChild(document.createTextNode(jobArray[i]));
         jobList.appendChild(entry);
+        console.log(localStorage.getItem("companyTitle"))
     } 
 }
