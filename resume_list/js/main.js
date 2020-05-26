@@ -5,7 +5,7 @@ var companyName = [];
 var jobTitle = [];
 var jobList = document.getElementById("list");
 
-  
+  console.log(localStorage.getItem("companyTitle"));
 /* Modal control */
 function openModal(){
     modal.style.display="block";    
@@ -42,27 +42,27 @@ for (i=0;i<deleteButton.length;i++){
 }
 }
 
+    
 function addJob() { 
-    /*TODO: Clean up this mess */
+    // TODO: Clean up this mess 
     var companyEntry = document.getElementById("company").value;
     var jobEntry = document.getElementById("job").value;
-    
+    // Checking if both fields contain something 
     if (companyName !=="" && jobTitle !==""){
         
-    /* Add user input to an array */
+    // Add user input as well as what's already in localsotrage to an array */
+
+    companyName.push(companyEntry);
+
+    jobTitle.push(jobEntry);
+        console.log(companyName);
+        console.log(jobTitle);
         
-        /* Every time the page gets refreshed and an entry added, the older entries get more and more screwed up */
-        var companyArray = localStorage.getItem("companyTitle");
-        var jobArray =  localStorage.getItem("jobTitle");
-        
-        companyArray = companyArray ? companyArray.split(','):[];
-        jobArray = jobArray ? jobArray.split(','):[];
-    companyArray.push(companyEntry);
-    jobArray.push(jobEntry);
+        /* Now you have an array of everything that was added on one page. These arrays empty on reload, so every time you add a new entry, you're running setItem, which overwrites localStorage with whatever has been added in this page. Anything already in there is removed. In addition, every job added adds "null" to the array, before the actual value. This will happen on the first job added because localstorage doesn't have anything in it yet, so when you push it, it pushes null. */
 
     /* Add the array into localStorage */
-    localStorage.setItem("companyTitle", JSON.stringify(companyArray));
-    localStorage.setItem("jobTitle", JSON.stringify(jobArray));
+    localStorage.setItem("companyTitle", JSON.stringify(companyName));
+    localStorage.setItem("jobTitle", JSON.stringify(jobTitle));
 
         var t= document.createTextNode(companyEntry);
         var h=document.createTextNode(jobEntry);
@@ -83,7 +83,13 @@ function addJob() {
 };
 
 function getLists(){
- console.log(localStorage);
+ // Do this on page load
+if (typeof localStorage.getItem("companyTitle") !== null){companyName.push(localStorage.getItem("companyTitle"))
+                            };
+if (typeof localStorage.getItem("jobTitle")!== null){
+        jobTitle.push(localStorage.getItem("jobTitle"))
+};
+    
     var companyArray = JSON.parse(localStorage.getItem("companyTitle"));
     var jobArray = JSON.parse(localStorage.getItem("jobTitle"));
     var i="";
@@ -94,11 +100,3 @@ function getLists(){
         jobList.appendChild(entry);
     } 
 }
-
-    /*var a = localStorage.getItem("companyTitle");
-    var b = localStorage.getItem("jobTitle");
-    entry.appendChild(document.createTextNode(a));
-    entry.appendChild(document.createTextNode(b));
-    jobList.appendChild(entry);*/
-
-
