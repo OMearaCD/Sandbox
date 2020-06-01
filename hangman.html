@@ -36,26 +36,29 @@
       
     var rando = Math.floor(Math.random() * 6);
     word = words[rando];
-    wordLength = word.length;
 
-      /* This is a string */ const dashes = "_ ".repeat(wordLength);
+      /* This is a string */ const dashes = "_ ".repeat(word.length);
       /* This converts that string to an array */ dashArray = dashes.split(" "); 
-    document.getElementById("wordDashes").innerHTML=wordLength + " letters in my word!" + "<br>";
+    document.getElementById("wordDashes").innerHTML=word.length + " letters in my word!" + "<br>";
       document.getElementById("dashes").innerHTML= dashArray;
-      answerWord = word.split("");
+      
       guessesLeft = 6;
       document.getElementById("guessesRemaining").innerHTML= guessesLeft + " guesses remaining";
       wrongGuesses=[];
       document.getElementById("wrongGuesses").innerHTML = "Incorrect: " + wrongGuesses;
-    };  
+    }; 
+       
       
 function guess(){
     const userGuess = document.getElementById("guessBox").value;
+    var answerWord = word.split("");
     if (answerWord.includes(userGuess)){
-        /* Works, but index needs to be index of all objects that are the user's guess */
-   var index = answerWord.indexOf(userGuess);
-        dashArray[index] = userGuess;
-        document.getElementById("dashes").innerHTML= dashArray;
+        for (var i=0;i<answerWord.length;i++){
+            if (answerWord[i] === userGuess){
+                dashArray[i]=userGuess;
+                document.getElementById("dashes").innerHTML= dashArray;
+            }     
+        };
     }
 
     else if (guessesLeft === 0){
@@ -78,7 +81,6 @@ function guess(){
 
 /* TO DO:
 
-- Make index return location of all letters in the word that match the user's guess
 - Alert user when they enter a letter that has already been guessed and do not let the "guess" function happen
 - Make box to guess word
 - Prohibit users from typing numbers or multiple characters in guess box
