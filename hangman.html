@@ -20,6 +20,7 @@
     <h2 id="wrongGuesses"></h2>
     <h2>Guesses left:</h2><h3 id="guessesRemaining">6 guesses remaining</h3>
     Type a letter or guess the word:<input type="text" id="guessBox" onfocus="this.value=''" value="Enter a letter")>
+    
     <button onclick="guess()">Guess!</button>
     <br>
     
@@ -60,6 +61,9 @@ function guess(){
             }     
         };
     }
+    else if (!isNaN(userGuess) || userGuess.length > 1) {
+        alert("Please enter a single letter.");
+    }
 
     else if (guessesLeft === 0){
         alert("Game Over!")
@@ -73,7 +77,7 @@ function guess(){
 
     document.getElementById("guessesRemaining").innerHTML= guessesLeft + " guesses remaining";
     document.getElementById("wrongGuesses").innerHTML = "Incorrect: " + wrongGuesses;
-                if (!dashArray.includes("_")) {
+                if (!dashArray.includes("_") || userGuess === word) {
                 alert ("You won!")
             }
 
@@ -81,9 +85,10 @@ function guess(){
 
 /* TO DO:
 
-- Alert user when they enter a letter that has already been guessed and do not let the "guess" function happen
+- Use an API to populate the "words" array
+- Convert all guesses to lowercase
+- Complete the word when user guesses it correctly
 - Make box to guess word
-- Prohibit users from typing numbers or multiple characters in guess box
 - Remove commas from word array and replace with spaces
 
 AFTER EVERYTHING IS DONE:
@@ -96,6 +101,7 @@ AFTER EVERYTHING IS DONE:
         - Guesses Remaining resets on new game
         - Guess input box clears on focus
         - Incorrect guesses stored in array and displayed
+        - Prohibit users from typing numbers or multiple characters in guess box
         */
   
     </script>
