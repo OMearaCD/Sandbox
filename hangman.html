@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Hangman Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
 
         button {
@@ -29,12 +30,22 @@
 </body>
  
     <script>
+        var settings = {
+  "url": "https://random-word-api.herokuapp.com/word?number=10",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  words=(response);
+});
+        
         var word = "";
         var guessesLeft = 6;  
         var wrongGuesses = [];
-        const words = ['giraffe', 'antelope', 'elephant', 'crocodile', 'leopard', 'zebra'];
+        var words = ['giraffe', 'antelope', 'elephant', 'crocodile', 'leopard', 'zebra'];
   function newWord(){
-      
+      console.log(words);
     var rando = Math.floor(Math.random() * 6);
     word = words[rando];
 
@@ -85,10 +96,11 @@ function guess(){
 
 /* TO DO:
 
+- Make box to guess word (currently, guessing the word alerts that you can't enter multiple letters and then tells you you won)
 - Use an API to populate the "words" array
 - Convert all guesses to lowercase
 - Complete the word when user guesses it correctly
-- Make box to guess word
+
 - Remove commas from word array and replace with spaces
 
 AFTER EVERYTHING IS DONE:
